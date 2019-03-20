@@ -282,6 +282,7 @@ defmodule Bamboo.Phoenix do
       template,
       assigns
     )
+    |> String.replace(~r/(?<!\r)\n/, "\r\n")
   end
 
   defp render_text(email, template) do
